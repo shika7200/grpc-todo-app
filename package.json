@@ -1,0 +1,23 @@
+{
+  "name": "grpc-todo-app",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/pg": "^8.11.11",
+    "drizzle-kit": "^0.30.6",
+    "tsx": "^4.19.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.13.2",
+    "@grpc/proto-loader": "^0.7.13",
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.41.0",
+    "drizzle-typebox": "^0.3.1",
+    "elysia": "^1.2.25",
+    "pg": "^8.14.1"
+  }
+}
