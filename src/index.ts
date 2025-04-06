@@ -48,7 +48,6 @@ function startGrpcServer() {
       return;
     }
 
-    grpcServer.start(); // <- Запускаем сервер
     console.log("gRPC сервер запущен на порту", port);
   });
 }
