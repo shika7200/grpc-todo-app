@@ -6,6 +6,7 @@ import { loadSync } from "@grpc/proto-loader";
 import { todos } from "./db/schema";
 import { eq } from "drizzle-orm";
 import 'dotenv/config';
+import swagger from '@elysiajs/swagger'
 
 // Подключение к PostgreSQL через Drizzle ORM
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
@@ -55,6 +56,7 @@ function startGrpcServer() {
 // Запуск HTTP-сервера Elysia с CRUD эндпоинтами
 function startHttpServer() {
   const app = new Elysia()
+  .use(swagger())
     .get("/", () => "Hello from Elysia HTTP server!")
     .get('/todos', async () => await db.select().from(todos))
     .post('/todos', async ({ body }) => {
