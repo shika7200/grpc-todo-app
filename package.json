@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "gen:proto": "mkdir -p src/generated && protoc --plugin=protoc-gen-ts_proto=$(bun pm bin)/protoc-gen-ts_proto  --ts_proto_out=src/generated --ts_proto_opt=outputServices=nice-grpc,useNiceGrpcServiceDefinition=true --proto_path=proto  proto/todo.proto"
+  },
   "name": "grpc-todo-app",
   "module": "index.ts",
   "type": "module",
@@ -19,6 +22,8 @@
     "drizzle-orm": "^0.41.0",
     "drizzle-typebox": "^0.3.1",
     "elysia": "^1.2.25",
-    "pg": "^8.14.1"
+    "nice-grpc": "^2.1.12",
+    "pg": "^8.14.1",
+    "ts-proto": "^2.7.0"
   }
 }
